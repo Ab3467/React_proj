@@ -5,7 +5,7 @@ import TextForm from './components/TextForm';
 function App() {
   return (
     <div>
-      <TextForm heading=""/>
+      <TextForm heading="Enter Text Here"/>
      
     </div>
   );

@@ -1,13 +1,19 @@
-import React from 'react'
+import React,{useState} from 'react'
 
-export default function TextForm() {
+export default function TextForm(props) {
+    const handleClick=()=> {
+        console.log("Uppercase is clicked");
+    }
+    
+    const {text,setText} = useState("Enter Text here")
+   
   return (
-    <div>
-      <h1>{props.heading}</h1>
-      <div className="mb-3">
-        <textarea name="form-control" id="my-box" rows="8"></textarea>
+    <div style={{ textAlign: 'center' }}>
+      <h1 className='mt-5'>{props.heading}</h1>
+      <div className="ml-5 mt-5">
+        <textarea name="form-control" value={text} id="my-box" rows="20" cols="100"></textarea>
       </div>
-      <button className='btn btn-primary'>Convert to UpperCase</button>
+      <button className='btn btn-primary' onClick={handleClick}>Convert to UpperCase</button>
     </div>
   )
 }
