@@ -30,6 +30,7 @@
     }
 
     return (
+        <>
         <div style={{ textAlign: 'center', margin: 'auto', width: '80%' }}>
         <h1 className='mt-5'>{props.heading}</h1>
         <div className="ml-5 mt-5">
@@ -41,10 +42,11 @@
             <button className='btn btn-primary mx-2' style={{ padding: '0.5rem 1rem' }} onClick={ClearWords}>Clear TextForm</button>
             <button className='btn btn-primary mx-1' style={{ padding: '0.5rem 1rem' }} onClick={handleinverseclick}>Inverse</button>
         </div>
-        <div className="container mt-5">
+        </div>
+        <div className="container mt-2">
             <h1>Text Summary</h1>
             <p>Characters: {text.length} Words: {text.split(" ").length}</p>
         </div>
-        </div>
+        </>
     )
     }
