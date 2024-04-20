@@ -1,8 +1,11 @@
 import React,{useState} from 'react'
 
 export default function TextForm(props) {
-    const handleClick=()=> {
+    const toUpperCase=()=> {
         setText(text.toUpperCase());
+    }
+    const toLowerCase=()=> {
+        setText(text.toLowerCase());
     }
     const handleChange=(e)=>{
         setText(e.target.value)
@@ -15,7 +18,8 @@ export default function TextForm(props) {
       <div className="ml-5 mt-5">
         <textarea className="mt-1 ml-1" name="form-control" value={text} onChange={handleChange} id="my-box" rows="20" cols="100"></textarea>
       </div>
-      <button className='btn btn-primary' onClick={handleClick}>Convert to UpperCase</button>
+      <button className='btn btn-primary' onClick={toUpperCase}>Convert to UpperCase</button>
+      <button className='btn btn-primary ' onClick={toLowerCase}>Convert to LowerCase</button>
     </div>
   )
 }
