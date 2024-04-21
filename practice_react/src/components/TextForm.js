@@ -5,15 +5,18 @@
 
     const toUpperCase = () => {
         setText(text.toUpperCase());
+        props.showAlert('Converted to Uppercase','Success')
     }
 
     const toLowerCase = () => {
         setText(text.toLowerCase());
+        props.showAlert('Converted to LowerCase','Success')
     }
 
     const ClearWords = () => {
         let clear =  " ";
         setText(clear)
+        props.showAlert('Clearing the textArea','Success')
     }
 
     const handleinverseclick = () => {
@@ -23,6 +26,7 @@
         newtext += text[i];
         }
         setText(newtext);
+        props.showAlert('Inverse the text','Success')
     }
 
     const handleChange = (e) => {
