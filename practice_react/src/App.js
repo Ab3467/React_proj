@@ -3,9 +3,11 @@ import './App.css';
 import Navbar from './components/Navbar';
 import About from './components/About';
 import TextForm from './components/TextForm';
+import Alert from './components/Alert';
 
 function App() {
   const [mode, setMode] = useState("light");
+  const [Alert,setAlert]=useState(null)
 
   let toggleMode = () => {
     if (mode === 'light') {
@@ -32,6 +34,7 @@ function App() {
   return (
     <>
       <Navbar title="VyroVerse" mode={mode} toggleMode={toggleMode} />
+      <Alert alert={"I am Alert"}/>
       <div>
         <TextForm heading="Enter Text Here" />
       </div>
