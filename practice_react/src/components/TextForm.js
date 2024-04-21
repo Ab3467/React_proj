@@ -32,7 +32,7 @@
     return (
         <>
         <div style={{ textAlign: 'center', margin: 'auto', width: '80%' }}>
-        <h1 className='mt-5'>{props.heading}</h1>
+        <h1 id='h1' className='mt-5'>{props.heading}</h1>
         <div className="ml-5 mt-5">
             <textarea className="mt-1 ml-1 form-control" name="form-control" value={text} onChange={handleChange} id="my-box" rows="20" cols="100"></textarea>
         </div>
@@ -44,8 +44,8 @@
         </div>
         </div>
         <div className="container mt-2">
-            <h1>Text Summary</h1>
-            <p>Characters: {text.length} Words: {text.split(" ").length}</p>
+            <h1 id='summary'>Text Summary</h1>
+            <p id='summary'>Characters: {text.length} Words: {text.split(" ").length}</p>
         </div>
         </>
     )

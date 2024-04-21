@@ -1,30 +1,39 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import About from './components/About';
 import TextForm from './components/TextForm';
 
 function App() {
-  const [mode,setMode]=useState("light")
+  const [mode, setMode] = useState("light");
 
-  let toggleMode=()=>{
-    if(mode==='light'){
-      setMode('dark');    
+  let toggleMode = () => {
+    if (mode === 'light') {
+      setMode('dark');
+      document.body.style.background = 'grey';
+      document.querySelector('#h1').style.color = 'white';
+      document.querySelectorAll('#summary').forEach(element => {
+        element.style.color = 'white';
+      });
+    } else {
+      setMode('light');
+      document.body.style.background = 'white';
+      document.querySelector('#h1').style.color = 'black';
+      document.querySelectorAll('#summary').forEach(element => {
+        element.style.color = 'black';
+      });
     }
-  
-  else{
-    setMode('light')
-  }
-}
+  };
+
   return (
     <>
-    <Navbar title="VyroVerse" mode={mode} toggleMode={toggleMode}/>
-    <div>
-      <TextForm heading="Enter Text Here"/>
-    </div>
-    <div>
-     <About/>
-    </div>
+      <Navbar title="VyroVerse" mode={mode} toggleMode={toggleMode} />
+      <div>
+        <TextForm heading="Enter Text Here" />
+      </div>
+      <div>
+        <About />
+      </div>
     </>
   );
 }
