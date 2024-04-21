@@ -7,34 +7,41 @@ import Alert from './components/Alert';
 
 function App() {
   const [mode, setMode] = useState("light");
-  const [Alert,setAlert]=useState(null)
+  const [alert, setAlert] = useState(null);
 
-  let toggleMode = () => {
+  const showAlert = (msg, type) => {
+    setAlert({
+      msg: msg,
+      type: type
+    });
+  };
+
+  const toggleMode = () => {
     if (mode === 'light') {
       setMode('dark');
       document.body.style.background = '#042743';
-      document.querySelector('#my-box').style.background='grey';
+      showAlert("Dark mode Enabled", 'Success');
+      document.querySelector('#my-box').style.background = 'grey';
       document.querySelector('#h1').style.color = 'white';
       document.querySelectorAll('#summary').forEach(element => {
         element.style.color = 'white';
       });
-      
     } else {
       setMode('light');
       document.body.style.background = 'white';
+      showAlert("Light mode Enabled", 'Success');
       document.querySelector('#h1').style.color = 'black';
       document.querySelectorAll('#summary').forEach(element => {
         element.style.color = 'black';
       });
-
     }
-    document.querySelector('#my-box').style.background='white';
+    document.querySelector('#my-box').style.background = 'white';
   };
 
   return (
     <>
       <Navbar title="VyroVerse" mode={mode} toggleMode={toggleMode} />
-      <Alert alert={"I am Alert"}/>
+      <Alert alert={alert} />
       <div>
         <TextForm heading="Enter Text Here" />
       </div>
