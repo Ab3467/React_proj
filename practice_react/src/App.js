@@ -1,3 +1,4 @@
+// App.js
 import React, { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
@@ -15,8 +16,8 @@ function App() {
       type: type
     });
     setTimeout(() => {
-      showAlert(null)
-    }, 2000);
+      setAlert(null)
+    }, 1500);
   }
 
   const toggleMode = () => {
@@ -24,14 +25,14 @@ function App() {
       setMode('dark');
       document.body.style.background = '#042743';
       showAlert("Dark mode Enabled", 'Success');
-      document.querySelector('#my-box').style.background = 'grey';
+      document.querySelector('#my-box').style.backgroundColor = 'grey';
       document.querySelector('#h1').style.color = 'white';
       document.querySelectorAll('#summary').forEach(element => {
         element.style.color = 'white';
       });
     } else {
       setMode('light');
-      document.body.style.background = 'white';
+      document.body.style.backgroundColor = 'white'; // Adjust background color for light mode
       showAlert("Light mode Enabled", 'Success');
       document.querySelector('#h1').style.color = 'black';
       document.querySelectorAll('#summary').forEach(element => {
@@ -45,8 +46,8 @@ function App() {
     <>
       <Navbar title="VyroVerse" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
-      <div>
-        <TextForm heading="Enter Text Here" />
+      <div className='container my-3'>
+        <TextForm showAlert={showAlert} heading="Enter Text Here" mode={mode}/>
       </div>
       <div>
         <About />
