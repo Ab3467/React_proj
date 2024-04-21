@@ -7,10 +7,15 @@ import TextForm from './components/TextForm';
 function App() {
   const [mode,setMode]=useState("light")
 
-  const toggleMode=()=>{
+  let toggleMode=()=>{
     if(mode==='light'){
-      setMode= 'dark';    }
+      setMode('dark');    
+    }
+  
+  else{
+    setMode('light')
   }
+}
   return (
     <>
     <Navbar title="VyroVerse" mode={mode} toggleMode={toggleMode}/>
