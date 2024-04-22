@@ -54,3 +54,7 @@
         </>
     )
     }
+
+
+    //React router : jb bhi hm ksi website mn ksi button p click krty hn to next page mn specific info chng hoti baqi page wohi rhta h , just like yt 
+    // home,library,etc whi rhta but reload p videos chnage hoti rhtio hn.... so that's called react router
