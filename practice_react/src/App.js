@@ -1,5 +1,10 @@
-// App.js
 import React, { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+
 import './App.css';
 import Navbar from './components/Navbar';
 import About from './components/About';
@@ -44,14 +49,20 @@ function App() {
 
   return (
     <>
-      <Navbar title="VyroVerse" mode={mode} toggleMode={toggleMode} />
-      <Alert alert={alert} />
-      <div className='container my-3'>
-        <TextForm showAlert={showAlert} heading="Enter Text Here" mode={mode}/>
-      </div>
-      <div>
-        <About />
-      </div>
+      <Router>
+        <Navbar title="VyroVerse" mode={mode} toggleMode={toggleMode} />
+        <Alert alert={alert} />
+        <div className='container my-3'>
+          <Switch>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/">
+              <TextForm showAlert={showAlert} heading="Enter Text Here" mode={mode} />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </>
   );
 }
